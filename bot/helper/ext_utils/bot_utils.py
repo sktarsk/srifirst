@@ -121,16 +121,16 @@ def progress_bar(pct):
     p = min(max(pct, 0), 100)
     cFull = int(p / 10)
     cIncomplete = int(round((p / 10 - cFull) * 4))
-    p_str = '■' * cFull
+    p_str = '●' * cFull
     if cIncomplete > 0:
-        s = ['▤', '▥', '▦', '▧', '▨', '▩', '■']
+        s = '◔◑◕●'
         incomplete_char = s[cIncomplete - 1]
         p_str += incomplete_char
-    p_str += '□' * (10 - len(p_str))
-    return f"[{p_str}]"
+    p_str += '○' * (10 - len(p_str))
+    return p_str
 
 def get_readable_message():
-    msg = "<b>Powered by Team leech</b>\n\n"
+    msg = "<b>Powered by Luna</b>\n\n"
     button = None
     STATUS_LIMIT = config_dict['STATUS_LIMIT']
     tasks = len(download_dict)
